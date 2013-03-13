@@ -75,8 +75,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BinaryExpression.h" />
+    <ClInclude Include="BinaryExpressionModel.h" />
     <ClInclude Include="Expression.h" />
+    <ClInclude Include="NullPointerException.h" />
     <ClInclude Include="UnaryExpression.h" />
+    <ClInclude Include="UnaryExpressionModel.h" />
     <ClInclude Include="ValueModel.h" />
   </ItemGroup>
   <ItemGroup>

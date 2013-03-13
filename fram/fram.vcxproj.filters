@@ -16,19 +16,37 @@
     <Filter Include="Header Files\core">
       <UniqueIdentifier>{d4e552c7-dd54-4a36-af4a-f97f4413e848}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\core\Unary">
+      <UniqueIdentifier>{5bf30260-1459-485f-b066-30f5b617287f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\Binary">
+      <UniqueIdentifier>{56fbd35a-5421-463f-9c6e-c8da85fba9f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\fuzzy">
+      <UniqueIdentifier>{839e9ecb-f0ac-4cea-b38f-85580b57a367}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Expression.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
-    <ClInclude Include="UnaryExpression.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="BinaryExpression.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
     <ClInclude Include="ValueModel.h">
       <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="UnaryExpression.h">
+      <Filter>Header Files\core\Unary</Filter>
+    </ClInclude>
+    <ClInclude Include="UnaryExpressionModel.h">
+      <Filter>Header Files\core\Unary</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryExpression.h">
+      <Filter>Header Files\core\Binary</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryExpressionModel.h">
+      <Filter>Header Files\core\Binary</Filter>
+    </ClInclude>
+    <ClInclude Include="NullPointerException.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
