@@ -13,28 +13,28 @@ namespace core
 		ValueModel(const T&);
 		virtual ~ValueModel() {};
 
-		virtual T evaluate() const;
+		virtual T Evaluate() const;
 
-		void setValue(const T&);
-		T getValue() const;
+		void SetValue(const T&);
+		T GetValue() const;
 
 	private:
-		T value;
+		T Value;
 	};
 
 	template <class T>
-	ValueModel<T>::ValueModel():value(0){}
+	ValueModel<T>::ValueModel():Value(0){}
 
 	template <class T>
-	ValueModel<T>::ValueModel(const T& _value):value(_value){}
+	ValueModel<T>::ValueModel(const T& _value):Value(_value){}
 
 	template <class T>
-	void ValueModel<T>::setValue(const T& _value){	value = _value;	}
+	void ValueModel<T>::SetValue(const T& _value){Value = _value;	}
 
 	template <class T>
-	T ValueModel<T>::getValue() const{	return value; }
+	T ValueModel<T>::GetValue() const{	return this.Value; }
 
 	template <class T>
-	T ValueModel<T>::evaluate() const{	return value; }
+	T ValueModel<T>::Evaluate() const{	return this.Value; }
 }
 #endif
