@@ -1,13 +1,16 @@
 #ifndef THEN_H_
 #define THEN_H_
 
-namespace Fuzzy {
+#include "../../Core/Binary/BinaryExpression.h"
+#include "../../Core/Expression.h"
 
-	template<class T> class Then: public Core::BinaryExpression<T>
+namespace Fuzzy 
+{
+	template<class T> 
+	class Then: public Core::BinaryExpression<T>
 	{
-	public:
-	
-		virtual T evaluate(Core::Expression<T>* left, Core::Expression<T>* right) const=0;
+		public:	
+			virtual T Evaluate(Core::Expression<T>*, Core::Expression<T>*) const=0;
 	};
 
 }

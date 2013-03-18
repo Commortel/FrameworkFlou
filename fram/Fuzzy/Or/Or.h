@@ -1,13 +1,16 @@
-#ifndef OR_H_
-#define OR_H_
+#ifndef OR_H
+#define OR_H
 
+#include "../../Core/Binary/BinaryExpression.h"
+#include "../../Core/Expression.h"
 
-namespace Fuzzy {
-
-	template<class T> class Or: public Core::BinaryExpression<T>
+namespace Fuzzy 
+{
+	template<class T> 
+	class Or: public Core::BinaryExpression<T>
 	{
-	public:
-		virtual T evaluate(Core::Expression<T>* left, Core::Expression<T>* right) const=0;
+		public:
+			virtual T Evaluate(Core::Expression<T>*, Core::Expression<T>*) const=0;
 	};
 
 }

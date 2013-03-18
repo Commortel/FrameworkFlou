@@ -1,24 +1,24 @@
-#ifndef THENMULT_H_
-#define THENMULT_H_
+#ifndef THENMULT_H
+#define THENMULT_H
+
 #include "Then.h"
 
-
-namespace Fuzzy {
-
-	template<class T> class ThenMult: public Core::BinaryExpression<T>
+namespace Fuzzy 
+{
+	template<class T> 
+	class ThenMult: public Then<T>
 	{
-	public:
-	
-		T evaluate(Core::Expression<T>* left, Core::Expression<T>* right) const;
+		public:
+			T Evaluate(Core::Expression<T>* left, Core::Expression<T>* right) const;
 	};
 
 	template<class T>
-	T ThenMult<T> evaluate(Core::Expression<T>* left, Core::Expression<T>* right) const
+	T ThenMult<T>::Evaluate(Core::Expression<T>* left, Core::Expression<T>* right) const
 	{
-		T l = left->evaluate();
-		T r = right->evaluate();
+		T l = left->Evaluate();
+		T r = right->Evaluate();
 
-		return (l * r );
+		return (l * r);
 	}
 
 }
