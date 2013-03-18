@@ -92,11 +92,11 @@
     <ClInclude Include="Fuzzy\Then\Then.h" />
     <ClInclude Include="Fuzzy\Then\ThenMin.h" />
     <ClInclude Include="Fuzzy\Then\ThenMult.h" />
-    <ClInclude Include="Main\main.h" />
+    <ClInclude Include="main.h" />
     <ClInclude Include="NullPointerException.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main\main.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

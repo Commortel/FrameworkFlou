@@ -102,12 +102,12 @@
     <ClInclude Include="Fuzzy\Then\ThenMult.h">
       <Filter>Header Files\fuzzy\Then</Filter>
     </ClInclude>
-    <ClInclude Include="Main\main.h">
+    <ClInclude Include="main.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main\main.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -8,7 +8,7 @@ namespace Core
 	{
 		public:
 			virtual ~Expression() {}
-			virtual T Evaluate() = 0;
+			virtual T Evaluate() const=0;
 	};
 }
 
