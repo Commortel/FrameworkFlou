@@ -7,6 +7,7 @@ using namespace std;
 
 #include "Core\ValueModel.h"
 #include "Core\Expression.h"
+
 #include "Fuzzy\And\AndMin.h"
 #include "Fuzzy\And\AndMult.h"
 #include "Fuzzy\Agg\AggMax.h"
@@ -15,5 +16,9 @@ using namespace std;
 #include "Fuzzy\Or\OrPlus.h"
 #include "Fuzzy\Then\ThenMin.h"
 #include "Fuzzy\Then\ThenMult.h"
+#include "Fuzzy\Not\NotMinus.h"
+
+#include "Fuzzy\Is\IsTriangle.h"
+#include "Fuzzy\Is\IsTrapeze.h"
 
 #endif

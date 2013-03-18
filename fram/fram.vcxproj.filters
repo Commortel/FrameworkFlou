@@ -105,6 +105,21 @@
     <ClInclude Include="main.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Fuzzy\Not\Not.h">
+      <Filter>Header Files\fuzzy\Not</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Not\NotMinus.h">
+      <Filter>Header Files\fuzzy\Not</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Is\Is.h">
+      <Filter>Header Files\fuzzy\Is</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Is\IsTrapeze.h">
+      <Filter>Header Files\fuzzy\Is</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Is\IsTriangle.h">
+      <Filter>Header Files\fuzzy\Is</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
