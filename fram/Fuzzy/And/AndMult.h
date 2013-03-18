@@ -1,5 +1,5 @@
-#ifndef ANDMIN_H
-#define ANDMIN_H
+#ifndef ANDMULT_H
+#define ANDMULT_H
 
 #include "And.h"
 
@@ -9,16 +9,16 @@ namespace Fuzzy
 	class AndMult : public And<T>
 	{
 		public:
-			virtual T Evaluate(core::Expression<T>*,core::Expression<T>*) const;
+			virtual T Evaluate(Core::Expression<T>*,Core::Expression<T>*) const;
 	};
 
 	template <class T>
-	T AndMin<T>::Evaluate(core::Expression<T>* l, core::Expression<T>* r) const
+	T AndMult<T>::Evaluate(Core::Expression<T>* left, Core::Expression<T>* right) const
 	{
-		T lv = l->evaluate();
-		T lr = r->evaluate();
+		T l = left->Evaluate();
+		T r = right->Evaluate();
 
-		return (lv >= lr)? r : l;
+		return l*r;
 	}
 }
 

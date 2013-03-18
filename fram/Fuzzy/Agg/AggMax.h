@@ -1,23 +1,24 @@
-#ifndef AGGMAX_H_
-#define AGGMAX_H_
+#ifndef AGGMAX_H
+#define AGGMAX_H
+
 #include "Agg.h"
 
-namespace Fuzzy {
-
-	template<class T> class AggMax: public Core::BinaryExpression<T>
+namespace Fuzzy 
+{
+	template <class T> 
+	class AggMax : public Agg<T>
 	{
-	public:
-	
-		T evaluate(Core::Expression<T>* left, Core::Expression<T>* right) const;
+		public:
+			T Evaluate(Core::Expression<T>*, Core::Expression<T>*) const;
 	};
 
 	template<class T>
-	T AggMax<T> evaluate(Core::Expression<T>* left, Core::Expression<T>* right) const
+	T AggMax<T>::Evaluate(Core::Expression<T>* left, Core::Expression<T>* right) const
 	{
-		T l = left->evaluate();
-		T r = right->evaluate();
+		T l = left->Evaluate();
+		T r = right->Evaluate();
 
-		return (l >= r )? l : r ;
+		return (l >= r )? l : r;
 	}
 }
 

@@ -9,16 +9,16 @@ namespace Fuzzy
 	class AndMin : public And<T>
 	{
 		public:
-			virtual T Evaluate(core::Expression<T>*,core::Expression<T>*) const;
+			T Evaluate(Core::Expression<T>*,Core::Expression<T>*) const;
 	};
 
 	template <class T>
-	T AndMin<T>::Evaluate(core::Expression<T>* l, core::Expression<T>* r) const
+	T AndMin<T>::Evaluate(Core::Expression<T>* left, Core::Expression<T>* right) const
 	{
-		T lv = l->Evaluate();
-		T lr = r->Evaluate();
+		T l = left->Evaluate();
+		T r = right->Evaluate();
 
-		return (lv >= lr)? r : l;
+		return (l >= r)? r : l;
 	}
 }
 

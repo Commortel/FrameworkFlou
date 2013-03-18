@@ -1,21 +1,22 @@
-#ifndef AGGPLUS_H_
-#define AGGPLUS_H_
+#ifndef AGGPLUS_H
+#define AGGPLUS_H
+
 #include "Agg.h"
 
-namespace Fuzzy {
-
-	template<class T> class AggPlus: public Core::BinaryExpression<T>
+namespace Fuzzy 
+{
+	template<class T> 
+	class AggPlus: public Agg<T>
 	{
-	public:
-	
-		T evaluate(Core::Expression<T>* left, Core::Expression<T>* right) const;
+		public:	
+			T Evaluate(Core::Expression<T>*, Core::Expression<T>*) const;
 	};
 
 	template<class T>
-	T AggPlus<T> evaluate(Core::Expression<T>* left, Core::Expression<T>* right) const
+	T AggPlus<T>::Evaluate(Core::Expression<T>* left, Core::Expression<T>* right) const
 	{
-		T l = left->evaluate();
-		T r = right->evaluate();
+		T l = left->Evaluate();
+		T r = right->Evaluate();
 
 		return (l + r );
 	}
