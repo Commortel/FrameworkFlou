@@ -74,16 +74,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="BinaryExpression.h" />
-    <ClInclude Include="BinaryExpressionModel.h" />
-    <ClInclude Include="Expression.h" />
+    <ClInclude Include="Core\Binary\BinaryExpression.h" />
+    <ClInclude Include="Core\Binary\BinaryExpressionModel.h" />
+    <ClInclude Include="Core\Expression.h" />
+    <ClInclude Include="Core\Unary\UnaryExpression.h" />
+    <ClInclude Include="Core\Unary\UnaryExpressionModel.h" />
+    <ClInclude Include="Core\ValueModel.h" />
+    <ClInclude Include="Fuzzy\Agg\Agg.h" />
+    <ClInclude Include="Fuzzy\Agg\AggMax.h" />
+    <ClInclude Include="Fuzzy\Agg\AggPlus.h" />
+    <ClInclude Include="Fuzzy\And\And.h" />
+    <ClInclude Include="Fuzzy\And\AndMin.h" />
+    <ClInclude Include="Fuzzy\And\AndMult.h" />
+    <ClInclude Include="Fuzzy\Or\Or.h" />
+    <ClInclude Include="Fuzzy\Or\OrMax.h" />
+    <ClInclude Include="Fuzzy\Or\OrPlus.h" />
+    <ClInclude Include="Fuzzy\Then\Then.h" />
+    <ClInclude Include="Fuzzy\Then\ThenMin.h" />
+    <ClInclude Include="Fuzzy\Then\ThenMult.h" />
+    <ClInclude Include="Main\main.h" />
     <ClInclude Include="NullPointerException.h" />
-    <ClInclude Include="UnaryExpression.h" />
-    <ClInclude Include="UnaryExpressionModel.h" />
-    <ClInclude Include="ValueModel.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="program.cpp" />
+    <ClCompile Include="Main\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

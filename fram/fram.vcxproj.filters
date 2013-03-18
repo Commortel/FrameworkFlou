@@ -25,32 +25,89 @@
     <Filter Include="Header Files\fuzzy">
       <UniqueIdentifier>{839e9ecb-f0ac-4cea-b38f-85580b57a367}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\fuzzy\And">
+      <UniqueIdentifier>{09324c57-71f9-4bb0-b261-88e00697a85d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\fuzzy\Or">
+      <UniqueIdentifier>{bfa1bcb3-f08c-4903-837a-00a732e7d241}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\fuzzy\Agg">
+      <UniqueIdentifier>{22973500-a780-42c9-8a43-e32e9a40fd60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\fuzzy\Then">
+      <UniqueIdentifier>{038a5f31-9425-4bd2-8f63-90b029ae9b21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\fuzzy\Not">
+      <UniqueIdentifier>{f4e26eda-3375-4a64-807c-fb46cddb67cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\fuzzy\Is">
+      <UniqueIdentifier>{bb97544f-2fbe-4666-b41c-1605da2e44bb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Expression.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="ValueModel.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="UnaryExpression.h">
-      <Filter>Header Files\core\Unary</Filter>
-    </ClInclude>
-    <ClInclude Include="UnaryExpressionModel.h">
-      <Filter>Header Files\core\Unary</Filter>
-    </ClInclude>
-    <ClInclude Include="BinaryExpression.h">
-      <Filter>Header Files\core\Binary</Filter>
-    </ClInclude>
-    <ClInclude Include="BinaryExpressionModel.h">
-      <Filter>Header Files\core\Binary</Filter>
-    </ClInclude>
     <ClInclude Include="NullPointerException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Core\Binary\BinaryExpression.h">
+      <Filter>Header Files\core\Binary</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Binary\BinaryExpressionModel.h">
+      <Filter>Header Files\core\Binary</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Unary\UnaryExpression.h">
+      <Filter>Header Files\core\Unary</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Unary\UnaryExpressionModel.h">
+      <Filter>Header Files\core\Unary</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Expression.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ValueModel.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\And\And.h">
+      <Filter>Header Files\fuzzy\And</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\And\AndMin.h">
+      <Filter>Header Files\fuzzy\And</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\And\AndMult.h">
+      <Filter>Header Files\fuzzy\And</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Agg\Agg.h">
+      <Filter>Header Files\fuzzy\Agg</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Agg\AggMax.h">
+      <Filter>Header Files\fuzzy\Agg</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Agg\AggPlus.h">
+      <Filter>Header Files\fuzzy\Agg</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Or\Or.h">
+      <Filter>Header Files\fuzzy\Or</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Or\OrMax.h">
+      <Filter>Header Files\fuzzy\Or</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Or\OrPlus.h">
+      <Filter>Header Files\fuzzy\Or</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Then\Then.h">
+      <Filter>Header Files\fuzzy\Then</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Then\ThenMin.h">
+      <Filter>Header Files\fuzzy\Then</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Then\ThenMult.h">
+      <Filter>Header Files\fuzzy\Then</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\main.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="program.cpp">
+    <ClCompile Include="Main\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
