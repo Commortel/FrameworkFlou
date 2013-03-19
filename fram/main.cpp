@@ -71,6 +71,22 @@ void Test_Operator_Unary()
 	assert(IsTrapezeValueMid.Evaluate() == 1);
 	assert(IsTrapezeValueMax.Evaluate() == 0.5);
 	assert(IsTrapezeValueOut.Evaluate() == 0);
+
+	Fuzzy::IsTrapezeLeft<double> isTrapezeLeft(0,2,4);
+	Core::ValueModel<double> isTrapezeLeftValueMid = isTrapezeLeft.Evaluate(&v1);
+	Core::ValueModel<double> isTrapezeLeftValueMax = isTrapezeLeft.Evaluate(&v2);
+	Core::ValueModel<double> isTrapezeLeftValueOut = isTrapezeLeft.Evaluate(&v3);
+	assert(isTrapezeLeftValueMid.Evaluate() == 0.5);
+	assert(isTrapezeLeftValueMax.Evaluate() == 1);
+	assert(isTrapezeLeftValueOut.Evaluate() == 0);
+
+	Fuzzy::IsTrapezeRight<double> isTrapezeRight(0,2,4);
+	Core::ValueModel<double> isTrapezeRightValueMin = isTrapezeRight.Evaluate(&v1);
+	Core::ValueModel<double> isTrapezeRightValueMid = isTrapezeRight.Evaluate(&v2);
+	Core::ValueModel<double> isTrapezeRightValueOut = isTrapezeRight.Evaluate(&v3);
+	assert(isTrapezeRightValueMin.Evaluate() == 1);
+	assert(isTrapezeRightValueMid.Evaluate() == 0.5);
+	assert(isTrapezeRightValueOut.Evaluate() == 0);
 }
 
 int main()
