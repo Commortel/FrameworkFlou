@@ -87,6 +87,8 @@
     <ClInclude Include="Fuzzy\And\AndMin.h" />
     <ClInclude Include="Fuzzy\And\AndMult.h" />
     <ClInclude Include="Fuzzy\Is\Is.h" />
+    <ClInclude Include="Fuzzy\Is\IsBell.h" />
+    <ClInclude Include="Fuzzy\Is\IsGaussian.h" />
     <ClInclude Include="Fuzzy\Is\IsTrapeze.h" />
     <ClInclude Include="Fuzzy\Is\IsTriangle.h" />
     <ClInclude Include="Fuzzy\Not\Not.h" />

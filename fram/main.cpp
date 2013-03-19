@@ -87,6 +87,14 @@ void Test_Operator_Unary()
 	assert(isTrapezeRightValueMin.Evaluate() == 1);
 	assert(isTrapezeRightValueMid.Evaluate() == 0.5);
 	assert(isTrapezeRightValueOut.Evaluate() == 0);
+
+	Fuzzy::IsGaussian<double> isGaussian(1,1);
+	Core::ValueModel<double> isGaussianValue = isGaussian.Evaluate(&v1);
+	assert(isGaussianValue.Evaluate() == 1);
+
+	Fuzzy::IsBell<double> isBell(1,1,1);
+	Core::ValueModel<double> isBellValue = isBell.Evaluate(&v1);
+	assert(isBellValue.Evaluate() == 1);
 }
 
 int main()

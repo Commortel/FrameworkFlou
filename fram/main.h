@@ -22,5 +22,7 @@ using namespace std;
 #include "Fuzzy\Is\IsTrapeze.h"
 #include "Fuzzy\Is\IsTrapezeLeft.h"
 #include "Fuzzy\Is\IsTrapezeRight.h"
+#include "Fuzzy\Is\IsGaussian.h"
+#include "Fuzzy\Is\IsBell.h"
 
 #endif

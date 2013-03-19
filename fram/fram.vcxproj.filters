@@ -120,6 +120,12 @@
     <ClInclude Include="Fuzzy\Is\IsTriangle.h">
       <Filter>Header Files\fuzzy\Is</Filter>
     </ClInclude>
+    <ClInclude Include="Fuzzy\Is\IsBell.h">
+      <Filter>Header Files\fuzzy\Is</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Is\IsGaussian.h">
+      <Filter>Header Files\fuzzy\Is</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
