@@ -43,6 +43,12 @@
     <Filter Include="Header Files\fuzzy\Is">
       <UniqueIdentifier>{bb97544f-2fbe-4666-b41c-1605da2e44bb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\core\Factory">
+      <UniqueIdentifier>{79b1217e-7dbf-437d-817e-cac8c86ff6a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\fuzzy\Factory">
+      <UniqueIdentifier>{79dc293f-300a-4df3-b20a-bd782267c4f7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NullPointerException.h">
@@ -125,6 +131,18 @@
     </ClInclude>
     <ClInclude Include="Fuzzy\Is\IsGaussian.h">
       <Filter>Header Files\fuzzy\Is</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Factory\ExpressionFactory.h">
+      <Filter>Header Files\core\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Factory\FuzzyFactory.h">
+      <Filter>Header Files\fuzzy\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Binary\BinaryShadowExpression.h">
+      <Filter>Header Files\core\Binary</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Unary\UnaryShadowExpression.h">
+      <Filter>Header Files\core\Unary</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

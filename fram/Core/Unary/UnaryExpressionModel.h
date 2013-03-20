@@ -1,7 +1,7 @@
 #ifndef UNARYEXPRESSIONMODEL_H
 #define UNARYEXPRESSIONMODEL_H
 
-#include "Expression.h"
+#include "../Expression.h"
 #include "UnaryExpression.h"
 
 namespace Core
@@ -37,7 +37,7 @@ namespace Core
 	template <class T>
 	T UnaryExpressionModel<T>::Evaluate() const
 	{
-		if(this->operand == NULL)
+		if(this->Ope == NULL)
 			throw new NullPointerException("operand expression missing !");
 		return Evaluate(this->Operand);
 	}

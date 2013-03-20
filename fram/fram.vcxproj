@@ -76,9 +76,12 @@
   <ItemGroup>
     <ClInclude Include="Core\Binary\BinaryExpression.h" />
     <ClInclude Include="Core\Binary\BinaryExpressionModel.h" />
+    <ClInclude Include="Core\Binary\BinaryShadowExpression.h" />
     <ClInclude Include="Core\Expression.h" />
+    <ClInclude Include="Core\Factory\ExpressionFactory.h" />
     <ClInclude Include="Core\Unary\UnaryExpression.h" />
     <ClInclude Include="Core\Unary\UnaryExpressionModel.h" />
+    <ClInclude Include="Core\Unary\UnaryShadowExpression.h" />
     <ClInclude Include="Core\ValueModel.h" />
     <ClInclude Include="Fuzzy\Agg\Agg.h" />
     <ClInclude Include="Fuzzy\Agg\AggMax.h" />
@@ -86,6 +89,7 @@
     <ClInclude Include="Fuzzy\And\And.h" />
     <ClInclude Include="Fuzzy\And\AndMin.h" />
     <ClInclude Include="Fuzzy\And\AndMult.h" />
+    <ClInclude Include="Fuzzy\Factory\FuzzyFactory.h" />
     <ClInclude Include="Fuzzy\Is\Is.h" />
     <ClInclude Include="Fuzzy\Is\IsBell.h" />
     <ClInclude Include="Fuzzy\Is\IsGaussian.h" />

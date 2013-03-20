@@ -97,11 +97,23 @@ void Test_Operator_Unary()
 	assert(isBellValue.Evaluate() == 1);
 }
 
+void Test_Factory()
+{
+	Fuzzy::AndMult<double> andMult;
+	Fuzzy::AggMax<double> aggMax;
+	Fuzzy::OrPlus<double> orPlus;
+	Fuzzy::ThenMin<double> thenMin;
+	Fuzzy::NotMinus<double> notMinus;
+
+	Fuzzy::FuzzyFactory<double> fuzzyFactory (&notMinus, &andMult, &orPlus, &thenMin, &aggMax);
+}
+
 int main()
 {
 	cout << "Starting Test...." << endl;
 	Test_Operator();
 	Test_Operator_Unary();
+	Test_Factory();
 	cout << "....Ending Test" << endl;
 	return 0;
 }

@@ -2,7 +2,7 @@
 #define BINARYEXPRESSIONMODEL_H
 
 #include "BinaryExpression.h"
-#include "Expression.h"
+#include "../Expression.h"
 
 namespace Core
 {
@@ -39,11 +39,11 @@ BinaryExpressionModel<T>::BinaryExpressionModel(BinaryExpression<T>* _ope,Expres
 template <class T>
 T BinaryExpressionModel<T>::Evaluate() const
 {
-	if(right == null)
+	if(this->Right == NULL)
 		throw new NullPointerException("right expression missing !");
-	if(left == null)
+	if(this->Left == NULL)
 		throw new NullPointerException("left expression missing !");
-	return Evaluate(this->left,this->right);
+	return Evaluate(this->Left,this->Right);
 }
 
 template <class T>
@@ -55,7 +55,7 @@ T BinaryExpressionModel<T>::Evaluate(Expression<T>* _left,Expression<T>* _right)
 }
 
 template <class T>
-BinaryExpression<T>* BinaryExpressionModel<T>::BinaryExpression<T>* GetOperator(){ return this->Ope; }
+BinaryExpression<T>* BinaryExpressionModel<T>::GetOperator(){ return this->Ope; }
 
 template <class T>
 Expression<T>* BinaryExpressionModel<T>::GetLeft(){ return this->Left; }
