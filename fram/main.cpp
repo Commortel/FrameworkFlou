@@ -1,6 +1,6 @@
 #include "main.h"
 
-void Test_Operator()
+void Test_Operator_Binary()
 {
 	Core::ValueModel<double> v1(1);
 	Core::ValueModel<double> v2;
@@ -126,7 +126,7 @@ void Test_Factory()
 	Core::ValueModel<double> food (1);
 	Core::ValueModel<double> tips (1);
 
-	/*Core::Expression<double> *r = 
+	Core::Expression<double> *r = 
 	f.NewAgg(
 		f.NewAgg(
 			f.NewThen(
@@ -142,15 +142,15 @@ void Test_Factory()
 			f.NewIs(&service,&excellent),
 			f.NewIs(&tips,&generous)
 		)
-	);*/
+	);
 
-
+	cout << r->Evaluate() << endl;
 }
 
 int main()
 {
 	cout << "Starting Test...." << endl;
-	Test_Operator();
+	Test_Operator_Binary();
 	Test_Operator_Unary();
 	Test_Factory();
 	cout << "....Ending Test" << endl;

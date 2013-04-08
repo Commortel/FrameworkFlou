@@ -39,7 +39,7 @@ namespace Core
 	template <class T>
 	Expression<T>* ExpressionFactory<T>::Hold(Expression<T> * o)
 	{
-		this->memory.insert(o);
+		this->memory->insert(o);
 		return o;
 	}
 

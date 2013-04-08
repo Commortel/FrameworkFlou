@@ -49,6 +49,9 @@
     <Filter Include="Header Files\fuzzy\Factory">
       <UniqueIdentifier>{79dc293f-300a-4df3-b20a-bd782267c4f7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\fuzzy\Mamdani">
+      <UniqueIdentifier>{82041413-f28a-4fb6-b31c-9e91552c70ac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NullPointerException.h">
@@ -143,6 +146,9 @@
     </ClInclude>
     <ClInclude Include="Core\Unary\UnaryShadowExpression.h">
       <Filter>Header Files\core\Unary</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Mamdani\MamdaniDefuzz.h">
+      <Filter>Header Files\fuzzy\Mamdani</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
