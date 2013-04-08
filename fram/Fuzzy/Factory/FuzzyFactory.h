@@ -62,6 +62,7 @@ namespace Fuzzy
 	Core::Expression<T>* FuzzyFactory<T>::NewAgg(Core::Expression<T>* left, Core::Expression<T>* right)
 	{
 		return this->NewBinary(&oAgg, left, right);
+		//return new Core::BinaryExpressionModel<T>(&oAgg, left, right);
 	}
 
 	template<class T>

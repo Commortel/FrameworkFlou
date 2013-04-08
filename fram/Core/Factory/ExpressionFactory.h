@@ -4,6 +4,8 @@
 #include "../Expression.h"
 #include "../Binary/BinaryExpression.h"
 #include "../Unary/UnaryExpression.h"
+#include "../Binary/BinaryExpressionModel.h"
+#include "../Unary/UnaryExpressionModel.h"
 #include <set>
 
 namespace Core
@@ -15,9 +17,11 @@ namespace Core
 			ExpressionFactory();
 			virtual ~ExpressionFactory();
 
-			Expression<T>& Hold(Expression<T> *);
-			Expression<T>& NewUnary(UnaryExpression<T> *, Expression<T> *);
-			Expression<T>& NewBinary(BinaryExpression<T> *, Expression<T> *, Expression<T> *);
+			Expression<T>* Hold(Expression<T> *);
+
+	protected:
+			Expression<T>* NewUnary(UnaryExpression<T> *, Expression<T> *);
+			Expression<T>* NewBinary(BinaryExpression<T> *, Expression<T> *, Expression<T> *);
 
 		private:
 			std::set<Expression<T> *> * memory;
@@ -33,22 +37,22 @@ namespace Core
 	}
 
 	template <class T>
-	Expression<T>& ExpressionFactory<T>::Hold(Expression<T> * o)
+	Expression<T>* ExpressionFactory<T>::Hold(Expression<T> * o)
 	{
 		this->memory.insert(o);
 		return o;
 	}
 
 	template <class T>
-	Expression<T>& ExpressionFactory<T>::NewUnary(UnaryExpression<T> * ope, Expression<T> * o)
+	Expression<T>* ExpressionFactory<T>::NewUnary(UnaryExpression<T> * ope, Expression<T> * o)
 	{
-		return this->Hold(new UnaryExpressionModel<T>(ope,o));
+		return (UnaryExpressionModel<T>*)this->Hold(new UnaryExpressionModel<T>(ope,o));
 	}
 
 	template <class T>
-	Expression<T>& ExpressionFactory<T>::NewBinary(BinaryExpression<T> * o, Expression<T> * left,Expression<T> * right)
+	Expression<T>* ExpressionFactory<T>::NewBinary(BinaryExpression<T> * o, Expression<T> * left,Expression<T> * right)
 	{
-		return this->Hold(new BinaryExpressionModel<T>(o,right,left));
+		return (BinaryExpressionModel<T>*)this->Hold(new BinaryExpressionModel<T>(o,right,left));
 	}
 }
 
