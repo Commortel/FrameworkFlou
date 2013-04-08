@@ -38,7 +38,8 @@ namespace Core
 	T UnaryExpressionModel<T>::Evaluate() const
 	{
 		if(this->Ope == NULL)
-			throw new NullPointerException("operand expression missing !");
+			throw(std::exception());
+			//throw new NullPointerException("operand expression missing !");
 		return Evaluate(this->Operand);
 	}
 
@@ -46,7 +47,8 @@ namespace Core
 	T UnaryExpressionModel<T>::Evaluate(Expression<T>* _operand) const
 	{
 		if (this->Ope == NULL)
-			throw NullPointerException("operator is nul");
+			throw(std::exception());
+			//throw(new NullPointerException("operator is nul"));
 		return this->Ope->Evaluate(_operand);
 	}
 

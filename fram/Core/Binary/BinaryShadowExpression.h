@@ -47,6 +47,7 @@ namespace Core
 	{
 		if(this->Target != NULL)
 			return this->Target->Evaluate(left,right);
+		return NULL;
 	}
 }
 

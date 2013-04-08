@@ -43,6 +43,9 @@ void Test_Operator()
 	Fuzzy::NotMinus<double> notMinus;
 	Core::ValueModel<double> notMinusValue = notMinus.Evaluate(&v1);
 	assert(notMinusValue.Evaluate() == -1);
+
+	Core::BinaryExpressionModel<double> bin (&andMult, &v1, &v2);
+	assert(bin.Evaluate() == 2);
 }
 
 void Test_Operator_Unary()
@@ -95,6 +98,9 @@ void Test_Operator_Unary()
 	Fuzzy::IsBell<double> isBell(1,1,1);
 	Core::ValueModel<double> isBellValue = isBell.Evaluate(&v1);
 	assert(isBellValue.Evaluate() == 1);
+
+	Core::UnaryExpressionModel<double> una (&isTriangle, &v1);
+	assert(una.Evaluate() == 0.2);
 }
 
 void Test_Factory()
@@ -105,7 +111,40 @@ void Test_Factory()
 	Fuzzy::ThenMin<double> thenMin;
 	Fuzzy::NotMinus<double> notMinus;
 
-	Fuzzy::FuzzyFactory<double> fuzzyFactory (&notMinus, &andMult, &orPlus, &thenMin, &aggMax);
+	Fuzzy::FuzzyFactory<double> f(&notMinus, &andMult, &orPlus, &thenMin, &aggMax);
+
+	//membership function 
+	Fuzzy::IsTriangle<double> poor(-5,0,5);
+	Fuzzy::IsTriangle<double> good(0,5,10);
+	Fuzzy::IsTriangle<double> excellent(5,10,15);
+	Fuzzy::IsTriangle<double> cheap(0,5,10);
+	Fuzzy::IsTriangle<double> average(10,15,20);
+	Fuzzy::IsTriangle<double> generous(20,25,30);
+
+	//values
+	Core::ValueModel<double> service (1);
+	Core::ValueModel<double> food (1);
+	Core::ValueModel<double> tips (1);
+
+	/*Core::Expression<double> *r = 
+	f.NewAgg(
+		f.NewAgg(
+			f.NewThen(
+				f.NewIs(&service,&poor),
+				f.NewIs(&tips,&cheap)
+				),
+			f.NewThen(
+				f.NewIs(&service,&good),
+				f.NewIs(&tips,&average)
+			)
+		),
+		f.NewThen(
+			f.NewIs(&service,&excellent),
+			f.NewIs(&tips,&generous)
+		)
+	);*/
+
+
 }
 
 int main()

@@ -40,9 +40,11 @@ template <class T>
 T BinaryExpressionModel<T>::Evaluate() const
 {
 	if(this->Right == NULL)
-		throw new NullPointerException("right expression missing !");
+		throw(std::exception());
+		//throw new NullPointerException("right expression missing !");
 	if(this->Left == NULL)
-		throw new NullPointerException("left expression missing !");
+		throw(std::exception());
+		//throw new NullPointerException("left expression missing !");
 	return Evaluate(this->Left,this->Right);
 }
 
@@ -50,7 +52,8 @@ template <class T>
 T BinaryExpressionModel<T>::Evaluate(Expression<T>* _left,Expression<T>* _right) const
 {
 	if (this->Ope == NULL)
-		throw NullPointerException("operator is nul");
+		throw(std::exception());
+		//throw NullPointerException("operator is nul");
 	return this->Ope->Evaluate(_left,_right);
 }
 
