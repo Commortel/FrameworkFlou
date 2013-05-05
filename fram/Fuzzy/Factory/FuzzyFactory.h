@@ -7,6 +7,8 @@
 #include "../Then/Then.h"
 #include "../Agg/Agg.h"
 #include "../Is/Is.h"
+#include "../Mamdani/CogDefuzz.h"
+
 #include "../../Core/Factory/ExpressionFactory.h"
 #include "../../Core/Binary/BinaryShadowExpression.h"
 #include "../../Core/Unary/UnaryShadowExpression.h"
@@ -17,7 +19,7 @@ namespace Fuzzy
 	class FuzzyFactory : public Core::ExpressionFactory<T> 
 	{
 		public:
-			FuzzyFactory(Not<T>*, And<T>*, Or<T>*, Then<T>*, Agg<T>*);
+			FuzzyFactory(Not<T>*, And<T>*, Or<T>*, Then<T>*, Agg<T>*, CogDefuzz<T>*);
 
 			Core::Expression<T>* NewAnd(Core::Expression<T>*, Core::Expression<T>*);
 			Core::Expression<T>* NewOr(Core::Expression<T>*, Core::Expression<T>*);
@@ -25,20 +27,21 @@ namespace Fuzzy
 			Core::Expression<T>* NewAgg(Core::Expression<T>*, Core::Expression<T>*);
 			Core::Expression<T>* NewNot(Core::Expression<T>*);
 			Core::Expression<T>* NewIs(Core::Expression<T>*, Fuzzy::Is<T>*);
+			Core::Expression<T>* NewDefuzz(Core::Expression<T>*, Core::Expression<T>*);
 
 		private:
 			Core::UnaryShadowExpression<T> oNot;
-			Core::BinaryShadowExpression<T> oAnd, oOr, oThen, oAgg;
+			Core::BinaryShadowExpression<T> oAnd, oOr, oThen, oAgg, opDefuzz;
 	};
 
 	template<class T>
-	FuzzyFactory<T>::FuzzyFactory(Not<T>* _Not, And<T>* _And, Or<T>* _Or, Then<T>* _Then, Agg<T>* _Agg)
+	FuzzyFactory<T>::FuzzyFactory(Not<T>* _Not, And<T>* _And, Or<T>* _Or, Then<T>* _Then, Agg<T>* _Agg,CogDefuzz<T>* _Defuzz)
 	: oNot(new Core::UnaryShadowExpression<T>(_Not)),
 	  oAnd(new Core::BinaryShadowExpression<T>(_And)),
 	  oOr(new Core::BinaryShadowExpression<T>(_Or)),
 	  oThen(new Core::BinaryShadowExpression<T>(_Then)),
-	  oAgg(new Core::BinaryShadowExpression<T>(_Agg))
-	{}
+	  oAgg(new Core::BinaryShadowExpression<T>(_Agg)),
+	  opDefuzz(new Core::BinaryShadowExpression<T>(_Defuzz)){}
 
 	template<class T>
 	Core::Expression<T>* FuzzyFactory<T>::NewAnd(Core::Expression<T>* left, Core::Expression<T>* right)
@@ -62,7 +65,6 @@ namespace Fuzzy
 	Core::Expression<T>* FuzzyFactory<T>::NewAgg(Core::Expression<T>* left, Core::Expression<T>* right)
 	{
 		return this->NewBinary(&oAgg, left, right);
-		//return new Core::BinaryExpressionModel<T>(&oAgg, left, right);
 	}
 
 	template<class T>
@@ -75,6 +77,12 @@ namespace Fuzzy
 	Core::Expression<T>* FuzzyFactory<T>::NewIs(Core::Expression<T>* o, Fuzzy::Is<T>* is)
 	{
 		return this->NewUnary(is, o);
+	}
+
+	template<class T>
+	Core::Expression<T>* FuzzyFactory<T>::NewDefuzz(Core::Expression<T>* left, Core::Expression<T>* right)
+	{
+		return this->NewBinary(&opDefuzz,left,right);
 	}
 }
 #endif

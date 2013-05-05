@@ -46,6 +46,7 @@ void Test_Operator_Binary()
 
 	Core::BinaryExpressionModel<double> bin (&andMult, &v1, &v2);
 	assert(bin.Evaluate() == 2);
+
 }
 
 void Test_Operator_Unary()
@@ -111,20 +112,23 @@ void Test_Factory()
 	Fuzzy::ThenMin<double> thenMin;
 	Fuzzy::NotMinus<double> notMinus;
 
-	Fuzzy::FuzzyFactory<double> f(&notMinus, &andMult, &orPlus, &thenMin, &aggMax);
+	Fuzzy::CogDefuzz<double> opDefuzz (0,25,1);
+
+	Fuzzy::FuzzyFactory<double> f(&notMinus, &andMult, &orPlus, &thenMin, &aggMax, &opDefuzz);
 
 	//membership function 
 	Fuzzy::IsTriangle<double> poor(-5,0,5);
 	Fuzzy::IsTriangle<double> good(0,5,10);
 	Fuzzy::IsTriangle<double> excellent(5,10,15);
+
 	Fuzzy::IsTriangle<double> cheap(0,5,10);
 	Fuzzy::IsTriangle<double> average(10,15,20);
 	Fuzzy::IsTriangle<double> generous(20,25,30);
 
 	//values
-	Core::ValueModel<double> service (1);
-	Core::ValueModel<double> food (1);
-	Core::ValueModel<double> tips (1);
+	Core::ValueModel<double> service (0);
+	Core::ValueModel<double> food (0);
+	Core::ValueModel<double> tips (0);
 
 	Core::Expression<double> *r = 
 	f.NewAgg(
@@ -144,7 +148,17 @@ void Test_Factory()
 		)
 	);
 
-	cout << r->Evaluate() << endl;
+	//defuzzification
+	Core::Expression<double> *system = f.NewDefuzz(r, &tips);
+
+	//apply input
+	double s;
+	while(true)
+	{
+		cout << "service : "; cin >> s;
+		service.SetValue(s);
+		cout << "tips -> " << system->Evaluate() << endl;
+	}
 }
 
 int main()

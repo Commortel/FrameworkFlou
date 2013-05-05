@@ -150,6 +150,18 @@
     <ClInclude Include="Fuzzy\Mamdani\MamdaniDefuzz.h">
       <Filter>Header Files\fuzzy\Mamdani</Filter>
     </ClInclude>
+    <ClInclude Include="Fuzzy\Mamdani\Interval.h">
+      <Filter>Header Files\fuzzy\Mamdani</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Mamdani\Shape.h">
+      <Filter>Header Files\fuzzy\Mamdani</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Mamdani\CogDefuzz.h">
+      <Filter>Header Files\fuzzy\Mamdani</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Mamdani\Evaluator.h">
+      <Filter>Header Files\fuzzy\Mamdani</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

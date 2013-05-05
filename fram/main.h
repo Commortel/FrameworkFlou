@@ -25,6 +25,8 @@ using namespace std;
 #include "Fuzzy\Is\IsGaussian.h"
 #include "Fuzzy\Is\IsBell.h"
 
+#include "Fuzzy\Mamdani\CogDefuzz.h"
+
 #include "Fuzzy\Factory\FuzzyFactory.h"
 
 #endif
