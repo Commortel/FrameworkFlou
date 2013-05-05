@@ -2,7 +2,6 @@
 #define THEN_H_
 
 #include "../../Core/Binary/BinaryExpression.h"
-#include "../../Core/Expression.h"
 
 namespace Fuzzy 
 {
