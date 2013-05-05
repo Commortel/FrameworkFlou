@@ -55,6 +55,9 @@
     <Filter Include="Header Files\core\Nary">
       <UniqueIdentifier>{09845117-5c06-41b7-9d42-79fe8618a424}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\fuzzy\Sugeno">
+      <UniqueIdentifier>{10e73118-050a-4ba2-8644-549902d5c22e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NullPointerException.h">
@@ -164,6 +167,18 @@
     </ClInclude>
     <ClInclude Include="Core\Nary\NaryExpressionModel.h">
       <Filter>Header Files\core\Nary</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Nary\NaryShadowExpression.h">
+      <Filter>Header Files\core\Nary</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Sugeno\SugenoThen.h">
+      <Filter>Header Files\fuzzy\Sugeno</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Sugeno\SugenoDefuzz.h">
+      <Filter>Header Files\fuzzy\Sugeno</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Sugeno\SugenoConclusion.h">
+      <Filter>Header Files\fuzzy\Sugeno</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

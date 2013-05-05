@@ -23,7 +23,7 @@ namespace Core
 		protected:
 			Expression<T>* NewUnary(UnaryExpression<T> *, Expression<T> *);
 			Expression<T>* NewBinary(BinaryExpression<T> *, Expression<T> *, Expression<T> *);
-			Expression<T>* NewNary(NaryExpression<T>* , std::vector<Expression<T>* > *);
+			Expression<T>* NewNary(NaryExpression<T>* , std::vector<const Core::Expression<T>* > *);
 
 		private:
 			std::set<Expression<T> *> * memory;
@@ -58,9 +58,9 @@ namespace Core
 	}
 
 	template<class T>
-	Expression<T>* ExpressionFactory<T>::newNary(NaryExpression<T>* o, std::vector<Expression<T>*> operands)
+	Expression<T>* ExpressionFactory<T>::NewNary(NaryExpression<T>* o, std::vector<const Core::Expression<T>*> *operands)
 	{
-		return hold(new NaryExpressionModel<T>(o, operands));
+		return (NaryExpressionModel<T>*)this->Hold(new NaryExpressionModel<T>(o, operands));
 	}
 }
 

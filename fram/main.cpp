@@ -106,16 +106,6 @@ void Test_Operator_Unary()
 
 void Test_Factory()
 {
-	Fuzzy::AndMult<double> andMult;
-	Fuzzy::AggMax<double> aggMax;
-	Fuzzy::OrPlus<double> orPlus;
-	Fuzzy::ThenMin<double> thenMin;
-	Fuzzy::NotMinus<double> notMinus;
-
-	Fuzzy::CogDefuzz<double> opDefuzz (0,25,1);
-
-	Fuzzy::FuzzyFactory<double> f(&notMinus, &andMult, &orPlus, &thenMin, &aggMax, &opDefuzz);
-
 	//membership function 
 	Fuzzy::IsTriangle<double> poor(-5,0,5);
 	Fuzzy::IsTriangle<double> good(0,5,10);
@@ -125,10 +115,36 @@ void Test_Factory()
 	Fuzzy::IsTriangle<double> average(10,15,20);
 	Fuzzy::IsTriangle<double> generous(20,25,30);
 
+	Fuzzy::IsTriangle<double> rancid(-5,0,5);
+	Fuzzy::IsTriangle<double> delicious(5,10,15);
+
 	//values
-	Core::ValueModel<double> service (0);
-	Core::ValueModel<double> food (0);
+	Core::ValueModel<double> service (3);
+	Core::ValueModel<double> food (8);
 	Core::ValueModel<double> tips (0);
+
+	Fuzzy::AndMult<double> andMult;
+	Fuzzy::AggMax<double> aggMax;
+	Fuzzy::OrPlus<double> orPlus;
+	Fuzzy::ThenMin<double> thenMin;
+	Fuzzy::NotMinus<double> notMinus;
+
+	Fuzzy::CogDefuzz<double> defuzz (0,25,1);
+
+	//Sugeno init
+	Fuzzy::SugenoDefuzz<double> sugeno;
+	std::vector<double> coef; coef.push_back(1);coef.push_back(1);
+	Fuzzy::SugenoConclusion<double> conclusion (&coef);
+
+	std::vector<const Core::Expression<double>* > SCservicefood;
+	SCservicefood.push_back(&service);
+	SCservicefood.push_back(&food);
+	std::vector<const Core::Expression<double>* > SCservice;
+	SCservice.push_back(&service);
+
+	Fuzzy::SugenoThen<double> sugenoThen;
+
+	Fuzzy::FuzzyFactory<double> f(&notMinus, &andMult, &orPlus, &thenMin, &aggMax, &defuzz, &sugeno, &conclusion);
 
 	Core::Expression<double> *r = 
 	f.NewAgg(
@@ -151,13 +167,62 @@ void Test_Factory()
 	//defuzzification
 	Core::Expression<double> *system = f.NewDefuzz(r, &tips);
 
-	//apply input
+	std::vector<const Core::Expression<double>*> rules;
+
+	rules.push_back(
+		f.NewThen(
+				f.NewOr(
+					f.NewIs(&service, &poor),
+					f.NewIs(&food, &rancid)
+				),
+				f.NewConclusion(&SCservicefood)
+		)
+	);
+
+	rules.push_back(
+		f.NewThen(
+				f.NewIs(&service, &good),
+				f.NewConclusion(&SCservice)
+		)
+	);
+
+	rules.push_back(
+		f.NewThen(
+				f.NewOr(
+					f.NewIs(&service, &excellent),
+					f.NewIs(&food, &delicious)
+				),
+				f.NewConclusion(&SCservicefood)
+		)
+	);
+
+	//defuzzification
+	Core::Expression<double> *resu = f.NewSugeno(&rules);
+
+	int choice = 0;
 	double s;
 	while(true)
 	{
-		cout << "service : "; cin >> s;
-		service.SetValue(s);
-		cout << "tips -> " << system->Evaluate() << endl;
+		if(choice == 0)
+		{
+			f.ChangeThen(&sugenoThen);
+			std::cout << "service : ";
+			std::cin >> s;
+			service.SetValue(s);
+			std::cout << "food : ";
+			std::cin >> s;
+			food.SetValue(s);
+			std::cout << "tips -> " << resu->Evaluate() << std::endl;
+		}
+		else
+		{
+			f.ChangeThen(&thenMin);
+			cout << "service : ";cin >> s;
+			service.SetValue(s);
+			cout << "tips -> " << system->Evaluate() << endl;
+		}
+		std::cout << "[0] Sugeno - [1] Mamdani";
+		std::cin >> choice;
 	}
 }
 

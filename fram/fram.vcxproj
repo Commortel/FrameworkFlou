@@ -81,6 +81,7 @@
     <ClInclude Include="Core\Factory\ExpressionFactory.h" />
     <ClInclude Include="Core\Nary\NaryExpression.h" />
     <ClInclude Include="Core\Nary\NaryExpressionModel.h" />
+    <ClInclude Include="Core\Nary\NaryShadowExpression.h" />
     <ClInclude Include="Core\Unary\UnaryExpression.h" />
     <ClInclude Include="Core\Unary\UnaryExpressionModel.h" />
     <ClInclude Include="Core\Unary\UnaryShadowExpression.h" />
@@ -105,6 +106,9 @@
     <ClInclude Include="Fuzzy\Or\Or.h" />
     <ClInclude Include="Fuzzy\Or\OrMax.h" />
     <ClInclude Include="Fuzzy\Or\OrPlus.h" />
+    <ClInclude Include="Fuzzy\Sugeno\SugenoConclusion.h" />
+    <ClInclude Include="Fuzzy\Sugeno\SugenoDefuzz.h" />
+    <ClInclude Include="Fuzzy\Sugeno\SugenoThen.h" />
     <ClInclude Include="Fuzzy\Then\Then.h" />
     <ClInclude Include="Fuzzy\Then\ThenMin.h" />
     <ClInclude Include="Fuzzy\Then\ThenMult.h" />

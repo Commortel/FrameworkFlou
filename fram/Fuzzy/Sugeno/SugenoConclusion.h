@@ -6,7 +6,7 @@
 namespace Fuzzy 
 {
 	template<class T>
-	class SugenoConclusion : public core::NaryExpression<T>
+	class SugenoConclusion : public Core::NaryExpression<T>
 	{
 		public:
 			SugenoConclusion(){};
@@ -14,7 +14,7 @@ namespace Fuzzy
 
 			virtual T Evaluate(std::vector<const Core::Expression<T>*> *operands) const;
 		private:
-			const std::vector<T> *coef;
+			const std::vector<T> * coef;
 	};
 
 	template<class T>
@@ -23,18 +23,20 @@ namespace Fuzzy
 	template<class T>
 	T SugenoConclusion <T>::Evaluate(std::vector<const Core::Expression<T>*> *operands) const
 	{
-		if(coefs.size() >= operands.size()+1)
+		typename std::vector<T>::const_iterator itcoef = this->coef->begin();
+		typename std::vector<const Core::Expression<T>*>::const_iterator itope = operands->begin();
+		T z = 0;
+
+		for(;itope != operands->end() && itcoef != this->coef->end(); itope++, itcoef++)
 		{
-			T oper = T(0);
-			std::vector<core::Expression<T>*>::iterator itOperands= operands.begin();
-			std::vector<T>::const_iterator itCoefs= coefs.begin();
-			for(; itOperands!=operands.end(); ++itOperands, ++itCoefs)
-			{
-				oper += *itCoefs * (*itOperands)->evaluate();
-			}
-			return oper+ *itCoefs;
+			T eval = (*itope)->Evaluate();
+			z += *itcoef * eval;
 		}
-		throw(std::exception());
+
+		if(itope != operands->end())
+			throw(std::exception());
+
+		return z;
 	}
 }
 #endif

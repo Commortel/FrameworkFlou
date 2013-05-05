@@ -4,6 +4,7 @@
 #include <assert.h>
 #include <iostream>
 using namespace std;
+#include <vector>
 
 #include "Core\ValueModel.h"
 #include "Core\Expression.h"
@@ -26,6 +27,8 @@ using namespace std;
 #include "Fuzzy\Is\IsBell.h"
 
 #include "Fuzzy\Mamdani\CogDefuzz.h"
+#include "Fuzzy\Sugeno\SugenoConclusion.h"
+#include "Fuzzy\Sugeno\SugenoDefuzz.h"
 
 #include "Fuzzy\Factory\FuzzyFactory.h"
 

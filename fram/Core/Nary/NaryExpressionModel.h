@@ -11,7 +11,7 @@ namespace Core
 	class NaryExpressionModel : public Core::NaryExpression<T>, public Core::Expression<T> 
 	{
 		public:
-			NaryExpressionModel(std::vector<const Core::Expression<T>*>*, Core::NaryExpression<T>*);
+			NaryExpressionModel(Core::NaryExpression<T>*, std::vector<const Core::Expression<T>*>*);
 			virtual ~NaryExpressionModel() {};
 
 			T Evaluate() const;
@@ -23,8 +23,8 @@ namespace Core
 	};
 
 	template<class T>
-	NaryExpressionModel<T>::NaryExpressionModel(std::vector<const Core::Expression<T>*> *_operands, Core::NaryExpression<T>* _op)
-	: operands(_operands), op(_op){}
+	NaryExpressionModel<T>::NaryExpressionModel(Core::NaryExpression<T>* _op, std::vector<const Core::Expression<T>*> *_operands)
+	: op(_op), operands(_operands){}
 
 	template<class T>
 	T NaryExpressionModel<T>::Evaluate() const
