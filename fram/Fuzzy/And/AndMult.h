@@ -9,7 +9,7 @@ namespace Fuzzy
 	class AndMult : public And<T>
 	{
 		public:
-			virtual T Evaluate(Core::Expression<T>*,Core::Expression<T>*) const;
+			virtual T Evaluate(Core::Expression<T>*, Core::Expression<T>*) const;
 	};
 
 	template <class T>

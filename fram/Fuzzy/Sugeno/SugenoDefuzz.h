@@ -12,13 +12,13 @@ namespace Fuzzy
 	{
 		public:
 			SugenoDefuzz ();
-			virtual ~SugenoDefuzz () {}; 
+			virtual ~SugenoDefuzz(){}; 
 
 			virtual T Evaluate(std::vector<const Core::Expression<T>*> *operands) const;
 	};
 
 	template<class T>
-	SugenoDefuzz<T>::SugenoDefuzz (){}
+	SugenoDefuzz<T>::SugenoDefuzz(){}
 
 	template<class T>
 	T SugenoDefuzz<T>::Evaluate(std::vector<const Core::Expression<T>*> *operands) const

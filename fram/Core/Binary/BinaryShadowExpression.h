@@ -2,7 +2,6 @@
 #define BINARYSHADOWEXPRESSION_H
 
 #include "BinaryExpression.h"
-#include "../Expression.h"
 
 namespace Core
 {
@@ -15,7 +14,7 @@ namespace Core
 
 			virtual void SetTarget(BinaryExpression<T>*);
 			BinaryExpression<T>* GetTarget() const;
-			virtual T Evaluate(Core::Expression<T>* ,Core::Expression<T>* ) const;
+			virtual T Evaluate(Core::Expression<T>*, Core::Expression<T>* ) const;
 
 		private:
 			Core::BinaryExpression<T>* Target;

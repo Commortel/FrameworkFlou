@@ -11,7 +11,6 @@ namespace Fuzzy
 		public:	
 			virtual T Evaluate(Core::Expression<T>*, Core::Expression<T>*) const=0;
 	};
-
 }
 
 #endif

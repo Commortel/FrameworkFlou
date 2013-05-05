@@ -25,18 +25,18 @@ namespace Fuzzy
 	{
 		typename std::vector<T>::const_iterator itcoef = this->coef->begin();
 		typename std::vector<const Core::Expression<T>*>::const_iterator itope = operands->begin();
-		T z = 0;
+		T res = 0;
 
 		for(;itope != operands->end() && itcoef != this->coef->end(); itope++, itcoef++)
 		{
 			T eval = (*itope)->Evaluate();
-			z += *itcoef * eval;
+			res += *itcoef * eval;
 		}
 
 		if(itope != operands->end())
 			throw(std::exception());
 
-		return z;
+		return res;
 	}
 }
 #endif

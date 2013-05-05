@@ -1,8 +1,7 @@
 #ifndef EVALUATOR_H
 #define EVALUATOR_H
 
-#include "../../Core/Expression.h"
-#include "../../Core/ValueModel.h"
+#include "ValueModel.h"
 #include <vector>
 
 namespace Core 
@@ -24,9 +23,8 @@ namespace Core
 			v->SetValue(i);
 			x.push_back(i);
 			y.push_back(e->Evaluate());
-			//std::cout << e->Evaluate() << "-" ;
 		}
-		//std::cout << std::endl;
+
 		return Shape(x,y);
 	}
 }

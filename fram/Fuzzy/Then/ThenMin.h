@@ -3,8 +3,8 @@
 
 #include "Then.h"
 
-namespace Fuzzy {
-
+namespace Fuzzy 
+{
 	template<class T> 
 	class ThenMin: public Then<T>
 	{

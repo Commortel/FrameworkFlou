@@ -9,7 +9,7 @@ namespace Fuzzy
 	class ThenMult: public Then<T>
 	{
 		public:
-			T Evaluate(Core::Expression<T>* left, Core::Expression<T>* right) const;
+			T Evaluate(Core::Expression<T>*, Core::Expression<T>*) const;
 	};
 
 	template<class T>
@@ -20,7 +20,6 @@ namespace Fuzzy
 
 		return (l * r);
 	}
-
 }
 
 #endif

@@ -1,7 +1,6 @@
-#ifndef NARYEXPRESSIONMODEL_H_
-#define NARYEXPRESSIONMODEL_H_
+#ifndef NARYEXPRESSIONMODEL_H
+#define NARYEXPRESSIONMODEL_H
 
-#include "../Expression.h"
 #include "NaryExpression.h"
 
 

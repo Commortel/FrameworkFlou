@@ -8,18 +8,18 @@ namespace Core
 	template <class T>
 	class ValueModel : public Expression<T>
 	{
-	public:
-		ValueModel();
-		ValueModel(const T&);
-		virtual ~ValueModel() {};
+		public:
+			ValueModel();
+			ValueModel(const T&);
+			virtual ~ValueModel() {};
 
-		T Evaluate() const;
+			T Evaluate() const;
 
-		void SetValue(const T&);
-		T GetValue() const;
+			void SetValue(const T&);
+			T GetValue() const;
 
-	private:
-		T Value;
+		private:
+			T Value;
 	};
 
 	template <class T>

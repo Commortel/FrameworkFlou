@@ -2,7 +2,6 @@
 #define AGG_H
 
 #include "../../Core/Binary/BinaryExpression.h"
-#include "../../Core/Expression.h"
 
 namespace Fuzzy 
 {

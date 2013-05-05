@@ -2,7 +2,6 @@
 #define BINARYEXPRESSIONMODEL_H
 
 #include "BinaryExpression.h"
-#include "../Expression.h"
 
 namespace Core
 {
@@ -41,10 +40,9 @@ T BinaryExpressionModel<T>::Evaluate() const
 {
 	if(this->Right == NULL)
 		throw(std::exception());
-		//throw new NullPointerException("right expression missing !");
 	if(this->Left == NULL)
 		throw(std::exception());
-		//throw new NullPointerException("left expression missing !");
+
 	return Evaluate(this->Left,this->Right);
 }
 
@@ -53,7 +51,7 @@ T BinaryExpressionModel<T>::Evaluate(Expression<T>* _left,Expression<T>* _right)
 {
 	if (this->Ope == NULL)
 		throw(std::exception());
-		//throw NullPointerException("operator is nul");
+
 	return this->Ope->Evaluate(_left,_right);
 }
 

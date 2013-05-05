@@ -2,7 +2,7 @@
 #define MAMDANIDEFUZZ_H
 
 #include "../../Core/Binary/BinaryExpression.h"
-#include "Evaluator.h"
+#include "../../Core/Evaluator.h"
 
 namespace Fuzzy 
 {
@@ -30,7 +30,6 @@ namespace Fuzzy
 	MamdaniDefuzz<T>::MamdaniDefuzz(const T& _min, const T& _max, const T& _step):
 	min(_min),max(_max),step(_step){}
 
-	// cast de l obligatoire
 	template<class T>
 	T MamdaniDefuzz<T>::Evaluate(Core::Expression<T>* left, Core::Expression<T>* right) const
 	{

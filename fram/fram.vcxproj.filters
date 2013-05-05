@@ -159,9 +159,6 @@
     <ClInclude Include="Fuzzy\Mamdani\CogDefuzz.h">
       <Filter>Header Files\fuzzy\Mamdani</Filter>
     </ClInclude>
-    <ClInclude Include="Fuzzy\Mamdani\Evaluator.h">
-      <Filter>Header Files\fuzzy\Mamdani</Filter>
-    </ClInclude>
     <ClInclude Include="Core\Nary\NaryExpression.h">
       <Filter>Header Files\core\Nary</Filter>
     </ClInclude>
@@ -179,6 +176,9 @@
     </ClInclude>
     <ClInclude Include="Fuzzy\Sugeno\SugenoConclusion.h">
       <Filter>Header Files\fuzzy\Sugeno</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Evaluator.h">
+      <Filter>Header Files\core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

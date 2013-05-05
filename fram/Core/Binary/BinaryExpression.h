@@ -10,7 +10,7 @@ namespace Core
 	{
 		public:
 			virtual ~BinaryExpression() {}
-			virtual T Evaluate(Expression<T>*,Expression<T>*) const = 0;
+			virtual T Evaluate(Expression<T>*, Expression<T>*) const = 0;
 	};
 }
 

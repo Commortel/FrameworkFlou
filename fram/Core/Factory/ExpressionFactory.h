@@ -1,9 +1,6 @@
 #ifndef EXPRESSIONFACTORY_H
 #define EXPRESSIONFACTORY_H
 
-#include "../Expression.h"
-#include "../Binary/BinaryExpression.h"
-#include "../Unary/UnaryExpression.h"
 #include "../Binary/BinaryExpressionModel.h"
 #include "../Unary/UnaryExpressionModel.h"
 #include "../Nary/NaryExpressionModel.h"
@@ -30,7 +27,7 @@ namespace Core
 	};
 
 	template <class T>
-	ExpressionFactory<T>::ExpressionFactory(): memory(new std::set<Expression<T>* >){}
+	ExpressionFactory<T>::ExpressionFactory(): memory(new std::set<Expression<T>*>){}
 
 	template <class T>
 	ExpressionFactory<T>::~ExpressionFactory() 
