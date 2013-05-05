@@ -52,6 +52,9 @@
     <Filter Include="Header Files\fuzzy\Mamdani">
       <UniqueIdentifier>{82041413-f28a-4fb6-b31c-9e91552c70ac}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\core\Nary">
+      <UniqueIdentifier>{09845117-5c06-41b7-9d42-79fe8618a424}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NullPointerException.h">
@@ -150,17 +153,17 @@
     <ClInclude Include="Fuzzy\Mamdani\MamdaniDefuzz.h">
       <Filter>Header Files\fuzzy\Mamdani</Filter>
     </ClInclude>
-    <ClInclude Include="Fuzzy\Mamdani\Interval.h">
-      <Filter>Header Files\fuzzy\Mamdani</Filter>
-    </ClInclude>
-    <ClInclude Include="Fuzzy\Mamdani\Shape.h">
-      <Filter>Header Files\fuzzy\Mamdani</Filter>
-    </ClInclude>
     <ClInclude Include="Fuzzy\Mamdani\CogDefuzz.h">
       <Filter>Header Files\fuzzy\Mamdani</Filter>
     </ClInclude>
     <ClInclude Include="Fuzzy\Mamdani\Evaluator.h">
       <Filter>Header Files\fuzzy\Mamdani</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Nary\NaryExpression.h">
+      <Filter>Header Files\core\Nary</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Nary\NaryExpressionModel.h">
+      <Filter>Header Files\core\Nary</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

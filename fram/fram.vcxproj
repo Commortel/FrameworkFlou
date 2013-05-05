@@ -79,6 +79,8 @@
     <ClInclude Include="Core\Binary\BinaryShadowExpression.h" />
     <ClInclude Include="Core\Expression.h" />
     <ClInclude Include="Core\Factory\ExpressionFactory.h" />
+    <ClInclude Include="Core\Nary\NaryExpression.h" />
+    <ClInclude Include="Core\Nary\NaryExpressionModel.h" />
     <ClInclude Include="Core\Unary\UnaryExpression.h" />
     <ClInclude Include="Core\Unary\UnaryExpressionModel.h" />
     <ClInclude Include="Core\Unary\UnaryShadowExpression.h" />
@@ -97,9 +99,7 @@
     <ClInclude Include="Fuzzy\Is\IsTriangle.h" />
     <ClInclude Include="Fuzzy\Mamdani\CogDefuzz.h" />
     <ClInclude Include="Fuzzy\Mamdani\Evaluator.h" />
-    <ClInclude Include="Fuzzy\Mamdani\Interval.h" />
     <ClInclude Include="Fuzzy\Mamdani\MamdaniDefuzz.h" />
-    <ClInclude Include="Fuzzy\Mamdani\Shape.h" />
     <ClInclude Include="Fuzzy\Not\Not.h" />
     <ClInclude Include="Fuzzy\Not\NotMinus.h" />
     <ClInclude Include="Fuzzy\Or\Or.h" />
