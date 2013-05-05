@@ -12,6 +12,7 @@
 #include "../../Core/Factory/ExpressionFactory.h"
 #include "../../Core/Binary/BinaryShadowExpression.h"
 #include "../../Core/Unary/UnaryShadowExpression.h"
+#include "../../Core/Nary/NaryShadowExpression.h"
 
 namespace Fuzzy 
 {
@@ -28,6 +29,13 @@ namespace Fuzzy
 			Core::Expression<T>* NewNot(Core::Expression<T>*);
 			Core::Expression<T>* NewIs(Core::Expression<T>*, Fuzzy::Is<T>*);
 			Core::Expression<T>* NewDefuzz(Core::Expression<T>*, Core::Expression<T>*);
+
+			void ChangeAnd(And<T>* o);
+			void ChangeOr(Or<T>* o);
+			void ChangeThen(Then<T>* o);
+			void ChangeAgg(Agg<T>* o);
+			void ChangeNot(Not<T>* o);
+			void ChangeDefuzz(CogDefuzz<T>* o);
 
 		private:
 			Core::UnaryShadowExpression<T> oNot;
@@ -83,6 +91,42 @@ namespace Fuzzy
 	Core::Expression<T>* FuzzyFactory<T>::NewDefuzz(Core::Expression<T>* left, Core::Expression<T>* right)
 	{
 		return this->NewBinary(&opDefuzz,left,right);
+	}
+
+	template<class T>
+	void FuzzyFactory<T>::ChangeAnd(And<T>* o)
+	{
+		oAnd.SetTarget(o);
+	}
+
+	template<class T>
+	void FuzzyFactory<T>::ChangeOr(Or<T>* o)
+	{
+		oOr.SetTarget(o);
+	}
+
+	template<class T>
+	void FuzzyFactory<T>::ChangeThen(Then<T>* o)
+	{
+		oThen.SetTarget(o);
+	}
+
+	template<class T>
+	void FuzzyFactory<T>::ChangeAgg(Agg<T>* o)
+	{
+		oAgg.SetTarget(o);
+	}
+
+	template<class T>
+	void FuzzyFactory<T>::ChangeNot(Not<T>* o)
+	{
+		oNot.SetTarget(o);
+	}
+
+	template<class T>
+	void FuzzyFactory<T>::ChangeDefuzz(CogDefuzz<T>* o)
+	{
+		opDefuzz.SetTarget(o);
 	}
 }
 #endif

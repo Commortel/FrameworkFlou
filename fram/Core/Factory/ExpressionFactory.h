@@ -6,6 +6,7 @@
 #include "../Unary/UnaryExpression.h"
 #include "../Binary/BinaryExpressionModel.h"
 #include "../Unary/UnaryExpressionModel.h"
+#include "../Nary/NaryExpressionModel.h"
 #include <set>
 
 namespace Core
@@ -19,9 +20,10 @@ namespace Core
 
 			Expression<T>* Hold(Expression<T> *);
 
-	protected:
+		protected:
 			Expression<T>* NewUnary(UnaryExpression<T> *, Expression<T> *);
 			Expression<T>* NewBinary(BinaryExpression<T> *, Expression<T> *, Expression<T> *);
+			Expression<T>* NewNary(NaryExpression<T>* , std::vector<Expression<T>* > *);
 
 		private:
 			std::set<Expression<T> *> * memory;
@@ -44,15 +46,21 @@ namespace Core
 	}
 
 	template <class T>
-	Expression<T>* ExpressionFactory<T>::NewUnary(UnaryExpression<T> * ope, Expression<T> * o)
+	Expression<T>* ExpressionFactory<T>::NewUnary(UnaryExpression<T> * o, Expression<T> * operands)
 	{
-		return (UnaryExpressionModel<T>*)this->Hold(new UnaryExpressionModel<T>(ope,o));
+		return (UnaryExpressionModel<T>*)this->Hold(new UnaryExpressionModel<T>(o,operands));
 	}
 
 	template <class T>
 	Expression<T>* ExpressionFactory<T>::NewBinary(BinaryExpression<T> * o, Expression<T> * left,Expression<T> * right)
 	{
 		return (BinaryExpressionModel<T>*)this->Hold(new BinaryExpressionModel<T>(o,right,left));
+	}
+
+	template<class T>
+	Expression<T>* ExpressionFactory<T>::newNary(NaryExpression<T>* o, std::vector<Expression<T>*> operands)
+	{
+		return hold(new NaryExpressionModel<T>(o, operands));
 	}
 }
 
