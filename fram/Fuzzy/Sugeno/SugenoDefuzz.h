@@ -39,7 +39,7 @@ namespace Fuzzy
 
 			denum += st->GetPremiseValue();
 		}
-
+		std::cout << denum << " " << num;
 		if(denum != 0)
 			return num/denum;
 		else

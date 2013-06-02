@@ -24,7 +24,6 @@ namespace Core
 			x.push_back(i);
 			y.push_back(e->Evaluate());
 		}
-
 		return Shape(x,y);
 	}
 }
