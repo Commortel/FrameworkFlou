@@ -30,8 +30,8 @@ namespace Core
 	T NaryShadowExpression<T>::Evaluate(std::vector<const Expression<T>*> *_operands) const
 	{
 		if(this->Target != NULL)
-			throw(std::exception());
-		return this->Target->Evaluate(_operands);			
+			return this->Target->Evaluate(_operands);
+		throw(std::exception());
 	}
 
 	template<class T>
