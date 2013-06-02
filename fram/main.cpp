@@ -150,16 +150,22 @@ void Test_Factory()
 	f.NewAgg(
 		f.NewAgg(
 			f.NewThen(
-				f.NewIs(&service,&poor),
-				f.NewIs(&tips,&cheap)
+				f.NewOr(
+					f.NewIs(&service,&poor),
+					f.NewIs(&food, &rancid)	
 				),
+				f.NewIs(&tips,&cheap)
+			),
 			f.NewThen(
 				f.NewIs(&service,&good),
 				f.NewIs(&tips,&average)
 			)
 		),
 		f.NewThen(
-			f.NewIs(&service,&excellent),
+			f.NewOr(
+				f.NewIs(&service, &excellent),
+				f.NewIs(&food, &delicious)
+			),
 			f.NewIs(&tips,&generous)
 		)
 	);
@@ -217,8 +223,12 @@ void Test_Factory()
 		else
 		{
 			f.ChangeThen(&thenMin);
-			cout << "service : ";cin >> s;
+			cout << "service : ";
+			cin >> s;
 			service.SetValue(s);
+			std::cout << "food : ";
+			std::cin >> s;
+			food.SetValue(s);
 			cout << "tips -> " << system->Evaluate() << endl;
 		}
 		std::cout << "[0] Sugeno - [1] Mamdani";
