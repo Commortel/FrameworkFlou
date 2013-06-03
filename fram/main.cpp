@@ -106,7 +106,11 @@ void Test_Operator_Unary()
 
 void Test_Factory()
 {
-	//membership function 
+	////membership function 
+	//Fuzzy::IsGaussian<double> poor(1.5,0);
+	//Fuzzy::IsGaussian<double> good(0.8,5);
+	//Fuzzy::IsGaussian<double> excellent(3,10);
+
 	Fuzzy::IsTriangle<double> poor(-5,0,5);
 	Fuzzy::IsTriangle<double> good(0,5,10);
 	Fuzzy::IsTriangle<double> excellent(5,10,15);
@@ -115,12 +119,13 @@ void Test_Factory()
 	Fuzzy::IsTriangle<double> average(10,15,20);
 	Fuzzy::IsTriangle<double> generous(20,25,30);
 
-	Fuzzy::IsTriangle<double> rancid(-5,0,5);
-	Fuzzy::IsTriangle<double> delicious(5,10,15);
+	Fuzzy::IsTrapezeLeft<double> rancid(1.5,3.5,5.5);
+	Fuzzy::IsTrapezeRight<double> delicious(6.5,7.5,8.5);
+
 
 	//values
-	Core::ValueModel<double> service (3);
-	Core::ValueModel<double> food (8);
+	Core::ValueModel<double> service (0);
+	Core::ValueModel<double> food (0);
 	Core::ValueModel<double> tips (0);
 
 	Fuzzy::AndMult<double> andMult;
@@ -133,7 +138,7 @@ void Test_Factory()
 
 	//Sugeno init
 	Fuzzy::SugenoDefuzz<double> sugeno;
-	std::vector<double> coef; coef.push_back(1);coef.push_back(1);
+	std::vector<double> coef; coef.push_back(5);coef.push_back(1);
 	Fuzzy::SugenoConclusion<double> conclusion (&coef);
 
 	std::vector<const Core::Expression<double>* > SCservicefood;
@@ -205,12 +210,13 @@ void Test_Factory()
 	//defuzzification
 	Core::Expression<double> *resu = f.NewSugeno(&rules);
 
-	int choice = 0;
+	int choice = 1;
 	double s;
 	while(true)
 	{
 		if(choice == 0)
 		{
+			std::cout << "******[Sugeno]*****"<< std::endl;
 			f.ChangeThen(&sugenoThen);
 			std::cout << "service : ";
 			std::cin >> s;
@@ -222,6 +228,7 @@ void Test_Factory()
 		}
 		else
 		{
+			std::cout << "******[Mamdani]*****" << std::endl;
 			f.ChangeThen(&thenMin);
 			cout << "service : ";
 			cin >> s;
@@ -239,9 +246,12 @@ void Test_Factory()
 int main()
 {
 	cout << "Starting Test...." << endl;
+	cout << "Test Binary Operator" << endl;
 	Test_Operator_Binary();
+	cout << "Test Binary Operator check" << endl;
+	cout << "Test Unary Operator" << endl;
 	Test_Operator_Unary();
+	cout << "Test Binary Operator check" << endl;
 	Test_Factory();
-	cout << "....Ending Test" << endl;
 	return 0;
 }

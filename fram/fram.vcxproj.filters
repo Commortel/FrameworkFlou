@@ -180,6 +180,12 @@
     <ClInclude Include="Core\Evaluator.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
+    <ClInclude Include="Fuzzy\Is\IsTrapezeRight.h">
+      <Filter>Header Files\fuzzy\Is</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuzzy\Is\IsTrapezeLeft.h">
+      <Filter>Header Files\fuzzy\Is</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

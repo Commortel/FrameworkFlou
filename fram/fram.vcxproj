@@ -98,6 +98,8 @@
     <ClInclude Include="Fuzzy\Is\IsBell.h" />
     <ClInclude Include="Fuzzy\Is\IsGaussian.h" />
     <ClInclude Include="Fuzzy\Is\IsTrapeze.h" />
+    <ClInclude Include="Fuzzy\Is\IsTrapezeLeft.h" />
+    <ClInclude Include="Fuzzy\Is\IsTrapezeRight.h" />
     <ClInclude Include="Fuzzy\Is\IsTriangle.h" />
     <ClInclude Include="Fuzzy\Mamdani\CogDefuzz.h" />
     <ClInclude Include="Fuzzy\Mamdani\MamdaniDefuzz.h" />
